@@ -2,17 +2,17 @@
 
 The PriorityExpiryCache has the following methods that can be invoked:
 
-get(String key)
+###### get(String key)
 
-put(String key, String value, int priority, int expiry)
+###### put(String key, String value, int priority, int expiry)
 
-evict(int currentTime)
+###### evict(int currentTime)
 
 
-Rules:
+### Rules:
 
-If an expired item is available. Remove it. If multiple items have the same expiry, removing any one suffices.
+1. If an expired item is available. Remove it. If multiple items have the same expiry, removing any one suffices.
 
-If condition #1 can't be satisfied, remove an item with the least priority.
+2. If condition #1 can't be satisfied, remove an item with the least priority.
 
-If more than one item satisfies condition #2, remove the least recently used one.
+3. If more than one item satisfies condition #2, remove the least recently used one.
